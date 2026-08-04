@@ -198,13 +198,11 @@ class AlienInvasion:
         # Spacing between aliens is one alien width and one alien height
         alien = Alien(self)
         alien_width, alien_height = alien.rect.size
-        current_num_of_aliens = 0
 
         current_x, current_y = alien_width, alien_height
         while current_y < (self.settings.screen_height - 5 * alien_height):
             while current_x < (self.settings.screen_width - 2 * alien_width):
                 self._create_alien(current_x, current_y)
-                current_num_of_aliens += 1
                 current_x += 1.5 * alien_width
 
             # Finished a row; reset x value and increment y value
