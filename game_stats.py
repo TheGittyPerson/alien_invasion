@@ -20,15 +20,11 @@ class GameStats:
     @staticmethod
     def _get_path():
         """Get path of all-time highscore TXT file."""
-        # Get the home directory path
         home_dir = os.path.expanduser('~')
 
-        # Extract the username from the home directory path
         if os.name == 'nt':  # Windows
-            # In Windows, home_dir is typically 'C:\\Users\\username'
             username = home_dir.split('\\')[-1]
         else:  # macOS/Linux
-            # In macOS/Linux, home_dir is typically '/home/username' or '/Users/username'
             username = home_dir.split('/')[-1]
 
         return Path(f"{username}_alltime_highscores.txt")
